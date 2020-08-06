@@ -225,7 +225,7 @@
                                     <h6>{{$item->name}}</h6>
                                 </div>
                             </div>
-
+                            @endforeach
                         </div>
                     </div>
                     <!-- End testimonials end -->
