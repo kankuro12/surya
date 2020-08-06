@@ -151,3 +151,7 @@ Route::get('/gallery/del/{gallery}', 'FrontendController@gallery_del');
 Route::get('/service', 'FrontendController@services');
 Route::post('/service/add', 'FrontendController@service_add');
 Route::get('/service/del/{service}', 'FrontendController@service_del');
+
+Route::get('/testimonial', 'FrontendController@testimonials');
+Route::post('/testimonial/add', 'FrontendController@testimonial_add');
+Route::get('/testimonial/del/{testimonial}', 'FrontendController@testimonial_del');

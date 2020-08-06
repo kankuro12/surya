@@ -388,6 +388,12 @@
                                         <span class="sidebar-normal">Services</span>
                                     </a>
                                 </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/testimonial') }}">
+                                        <span class="sidebar-mini"></span>
+                                        <span class="sidebar-normal">Testimonials</span>
+                                    </a>
+                                </li>
 
                             </ul>
                         </div>

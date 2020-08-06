@@ -215,39 +215,17 @@
                         <a class="quate" href="#"><i class="fa fa-quote-right"></i></a>
                         <!-- start testimonial carousel -->
                         <div class="testimonial-carousel">
+                            @foreach (\App\Testimonial::all() as $item)
+
                             <div class="single-testi">
                                 <div class="testi-text">
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est
-                                        eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget
-                                        congue.
+                                        {!! $item->description !!}
                                     </p>
-                                    <h6>Boby</h6>
+                                    <h6>{{$item->name}}</h6>
                                 </div>
                             </div>
-                            <!-- End single item -->
-                            <div class="single-testi">
-                                <div class="testi-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est
-                                        eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget
-                                        congue.
-                                    </p>
-                                    <h6>Jhon</h6>
-                                </div>
-                            </div>
-                            <!-- End single item -->
-                            <div class="single-testi">
-                                <div class="testi-text">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est
-                                        eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget
-                                        congue.
-                                    </p>
-                                    <h6>Fleming</h6>
-                                </div>
-                            </div>
-                            <!-- End single item -->
+
                         </div>
                     </div>
                     <!-- End testimonials end -->

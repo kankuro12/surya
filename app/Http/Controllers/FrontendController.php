@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Slider;
 use App\Gallery;
 use App\Services;
+use App\Testimonial;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 
@@ -95,6 +96,31 @@ class FrontendController extends Controller
     public function service_del(Services $service)
     {
         $service->delete();
+        return redirect()->back();
+    }
+
+    //testimonial
+
+    public function testimonials()
+    {
+        return view('back.frontend.testimonial', ['images' => Testimonial::all()]);
+    }
+
+    public function testimonial_add(Request $request)
+    {
+
+
+        $testimonial = new Testimonial();
+        $testimonial->name = $request->name;
+        $testimonial->description = $request->description;
+        $testimonial->save();
+
+        return redirect()->back();
+    }
+
+    public function testimonial_del(Testimonial $testimonial)
+    {
+        $testimonial->delete();
         return redirect()->back();
     }
 }
