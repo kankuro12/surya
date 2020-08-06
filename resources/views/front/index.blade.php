@@ -268,7 +268,7 @@
                             <i class="fa fa-envelope-o"></i>
                             <p>
                                 Email: info@example.com<br>
-                                <span>Web: www.example.com</span>
+                                <span>Web: suryaadvertising.com.np</span>
                             </p>
                         </div>
                     </div>
