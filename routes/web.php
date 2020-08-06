@@ -16,16 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/billing/api/{id}','ApiController@billingApi');
-Route::get('/bills/api/{id}','ApiController@billsApi');
+Route::get('/billing/api/{id}', 'ApiController@billingApi');
+Route::get('/bills/api/{id}', 'ApiController@billsApi');
 
 
 // customer panel
-Route::get('/customer/login','CustomerpanelController@index');
-Route::post('/customer/login','CustomerpanelController@store');
-Route::get('/customer/dashboard','CustomerpanelController@CusDashboard');
-Route::get('/customer/order/{id}','CustomerpanelController@OrderDetail');
-Route::post('/customer/order/{id}','CustomerpanelController@fileUpload');
+Route::get('/customer/login', 'CustomerpanelController@index');
+Route::post('/customer/login', 'CustomerpanelController@store');
+Route::get('/customer/dashboard', 'CustomerpanelController@CusDashboard');
+Route::get('/customer/order/{id}', 'CustomerpanelController@OrderDetail');
+Route::post('/customer/order/{id}', 'CustomerpanelController@fileUpload');
 
 
 Auth::routes();
@@ -34,7 +34,7 @@ Route::get('/admin', 'HomeController@index')->name('admin');
 // customer
 Route::get('/customer/add', 'CustomerController@index');
 Route::post('/customer/add', 'CustomerController@store');
-Route::get('/customer/list','CustomerController@list');
+Route::get('/customer/list', 'CustomerController@list');
 Route::get('/customer/edit/{id}', 'CustomerController@edit');
 Route::post('/customer/edit/{id}', 'CustomerController@update');
 Route::get('/customer/delete/{id}', 'CustomerController@destroy');
@@ -50,9 +50,9 @@ Route::get('/image/delete/{id}', 'CustomerController@imageDelete')->name('imaged
 
 // customer payment
 
-Route::get('/customer/due','CustomerPayController@index');
-Route::post('/customer/due','CustomerPayController@store');
-Route::get('/customer/duebills/{id}','CustomerPayController@duebills');
+Route::get('/customer/due', 'CustomerPayController@index');
+Route::post('/customer/due', 'CustomerPayController@store');
+Route::get('/customer/duebills/{id}', 'CustomerPayController@duebills');
 // Route::get('/pay/{id}' ,'CustomerPayController@billPay');
 
 
@@ -70,6 +70,7 @@ Route::get('/staff/delete/{id}', 'StaffController@destroy');
 Route::get('/joborder/add', 'JoborderController@create');
 Route::post('/joborder/add', 'JoborderController@store');
 Route::get('/joborder/list', 'JoborderController@index');
+Route::get('/joborder/worker', 'JoborderController@worker');
 
 // expense
 Route::get('/exp/add', 'ExpenseController@index');
@@ -106,17 +107,17 @@ Route::get('/supplier-adv/edit/{id}', 'Supplier_advanceController@edit');
 Route::get('/supplier-adv/delete/{id}', 'Supplier_advanceController@destroy');
 
 // supplier billing
-Route::get('/supplier/billing','SupplierbillController@index');
-Route::post('/supplier/billing','SupplierbillController@store');
-Route::get('/supplier/bills','SupplierbillController@list');
-Route::get('/supplier/bill/items/{id}','SupplierbillController@billItems');
-Route::get('/bill/cancel/{id}','SupplierbillController@billCancel');
-Route::get('/bill/undo/{id}','SupplierbillController@billUndo');
-Route::get('/cancel/bills/','SupplierbillController@billCancelList');
-Route::get('/bill/edit/{id}','SupplierbillController@billEdit');
-Route::get('/bill/edit/{id}','SupplierbillController@billEdit');
-Route::post('/bill/edit/{id}','SupplierbillController@billUpdate');
-Route::get('/bill/item/del/{id}','SupplierbillController@billItemDel');
+Route::get('/supplier/billing', 'SupplierbillController@index');
+Route::post('/supplier/billing', 'SupplierbillController@store');
+Route::get('/supplier/bills', 'SupplierbillController@list');
+Route::get('/supplier/bill/items/{id}', 'SupplierbillController@billItems');
+Route::get('/bill/cancel/{id}', 'SupplierbillController@billCancel');
+Route::get('/bill/undo/{id}', 'SupplierbillController@billUndo');
+Route::get('/cancel/bills/', 'SupplierbillController@billCancelList');
+Route::get('/bill/edit/{id}', 'SupplierbillController@billEdit');
+Route::get('/bill/edit/{id}', 'SupplierbillController@billEdit');
+Route::post('/bill/edit/{id}', 'SupplierbillController@billUpdate');
+Route::get('/bill/item/del/{id}', 'SupplierbillController@billItemDel');
 
 
 
@@ -126,36 +127,27 @@ Route::get('/bill/item/del/{id}','SupplierbillController@billItemDel');
 
 
 // salary
-Route::get('salary/add','SalaryController@index');
-Route::post('salary/add','SalaryController@store');
-Route::get('/salary/list','SalaryController@list');
+Route::get('salary/add', 'SalaryController@index');
+Route::post('salary/add', 'SalaryController@store');
+Route::get('/salary/list', 'SalaryController@list');
 
 
 //supplier payments
-Route::get('/supplier/payment','SupplierPayController@index');
-Route::post('/supplier/payment','SupplierPayController@store');
-Route::get('/supplier/due/{id}','SupplierPayController@supplierDue');
-Route::get('/supplier/payment_list','SupplierPayController@paymentList');
+Route::get('/supplier/payment', 'SupplierPayController@index');
+Route::post('/supplier/payment', 'SupplierPayController@store');
+Route::get('/supplier/due/{id}', 'SupplierPayController@supplierDue');
+Route::get('/supplier/payment_list', 'SupplierPayController@paymentList');
 
+//front end detail
+Route::get('/slide', 'FrontendController@sliders');
+Route::post('/slide/add', 'FrontendController@slider_add');
+Route::get('/slide/del/{slider}', 'FrontendController@slider_del');
 
+//front end detail
+Route::get('/gallery', 'FrontendController@gallerys');
+Route::post('/gallery/add', 'FrontendController@gallery_add');
+Route::get('/gallery/del/{gallery}', 'FrontendController@gallery_del');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('/service', 'FrontendController@services');
+Route::post('/service/add', 'FrontendController@service_add');
+Route::get('/service/del/{service}', 'FrontendController@service_del');

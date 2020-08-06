@@ -7,7 +7,8 @@
     <link rel="icon" type="image/png" href="back/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>@yield('title')</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -33,7 +34,7 @@
                 <div class="logo">
 
                     <a href="#" class="simple-text logo-normal" style="margin-left:1.5rem;">
-                      Surya Advertising
+                        Surya Advertising
                     </a>
                 </div>
                 <div class="user">
@@ -103,9 +104,9 @@
                         </div>
                     </li>
 
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#payment">
-                           <i class="nc-icon nc-money-coins"></i>
+                            <i class="nc-icon nc-money-coins"></i>
                             <p>
                                 Customer Payment
                                 <b class="caret"></b>
@@ -154,19 +155,19 @@
                                     </a>
                                 </li>
 
-                                 <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/advance/add') }}">
-                                            <span class="sidebar-mini">A</span>
-                                            <span class="sidebar-normal">Add Advacne</span>
-                                        </a>
-                                    </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/advance/add') }}">
+                                        <span class="sidebar-mini">A</span>
+                                        <span class="sidebar-normal">Add Advacne</span>
+                                    </a>
+                                </li>
 
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/advance/list') }}">
-                                                <span class="sidebar-mini">A.L</span>
-                                                <span class="sidebar-normal">List Advance</span>
-                                            </a>
-                                        </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/advance/list') }}">
+                                        <span class="sidebar-mini">A.L</span>
+                                        <span class="sidebar-normal">List Advance</span>
+                                    </a>
+                                </li>
 
                             </ul>
                         </div>
@@ -200,106 +201,106 @@
                     </li>
 
                     <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#exp">
-                                <i class="nc-icon nc-money-coins"></i>
-                                <p>
-                                    Expenses
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse " id="exp">
-                                <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/exp/add') }}">
-                                            <span class="sidebar-mini">E.C</span>
-                                            <span class="sidebar-normal">Add ExpCategory</span>
-                                        </a>
-                                    </li>
+                        <a class="nav-link" data-toggle="collapse" href="#exp">
+                            <i class="nc-icon nc-money-coins"></i>
+                            <p>
+                                Expenses
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse " id="exp">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/exp/add') }}">
+                                        <span class="sidebar-mini">E.C</span>
+                                        <span class="sidebar-normal">Add ExpCategory</span>
+                                    </a>
+                                </li>
 
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/expcat/list') }}">
-                                                <span class="sidebar-mini">M.E</span>
-                                                <span class="sidebar-normal">Manage Expense</span>
-                                            </a>
-                                        </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/expcat/list') }}">
+                                        <span class="sidebar-mini">M.E</span>
+                                        <span class="sidebar-normal">Manage Expense</span>
+                                    </a>
+                                </li>
 
-                                </ul>
-                            </div>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#sala">
-                                <i class="nc-icon nc-money-coins"></i>
-                                <p>
-                                    Salary
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse " id="sala">
-                                <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/salary/add') }}">
-                                            <span class="sidebar-mini">A.S</span>
-                                            <span class="sidebar-normal">Add Salary</span>
-                                        </a>
-                                    </li>
-
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/salary/list') }}">
-                                                <span class="sidebar-mini">S.L</span>
-                                                <span class="sidebar-normal">List Salary</span>
-                                            </a>
-                                        </li>
-                                </ul>
-                            </div>
-                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
 
-                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#sup">
-                                <i class="nc-icon nc-circle-09"></i>
-                                <p>
-                                    Suppliers
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse " id="sup">
-                                <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/supplier/add') }}">
-                                            <span class="sidebar-mini">A.S</span>
-                                            <span class="sidebar-normal">Add Supplier</span>
-                                        </a>
-                                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#sala">
+                            <i class="nc-icon nc-money-coins"></i>
+                            <p>
+                                Salary
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse " id="sala">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/salary/add') }}">
+                                        <span class="sidebar-mini">A.S</span>
+                                        <span class="sidebar-normal">Add Salary</span>
+                                    </a>
+                                </li>
 
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/supplier/list') }}">
-                                                <span class="sidebar-mini">S.L</span>
-                                                <span class="sidebar-normal">List Supplier</span>
-                                            </a>
-                                        </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/salary/list') }}">
+                                        <span class="sidebar-mini">S.L</span>
+                                        <span class="sidebar-normal">List Salary</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
 
-                                         <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/supplier-adv/add') }}">
-                                            <span class="sidebar-mini">A</span>
-                                            <span class="sidebar-normal">Add Advacne</span>
-                                        </a>
-                                    </li>
 
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/supplier-adv/list') }}">
-                                                <span class="sidebar-mini">A.L</span>
-                                                <span class="sidebar-normal">List Advance</span>
-                                            </a>
-                                        </li>
-                                </ul>
-                            </div>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#sup">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>
+                                Suppliers
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse " id="sup">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier/add') }}">
+                                        <span class="sidebar-mini">A.S</span>
+                                        <span class="sidebar-normal">Add Supplier</span>
+                                    </a>
+                                </li>
 
-                         <li class="nav-item">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier/list') }}">
+                                        <span class="sidebar-mini">S.L</span>
+                                        <span class="sidebar-normal">List Supplier</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier-adv/add') }}">
+                                        <span class="sidebar-mini">A</span>
+                                        <span class="sidebar-normal">Add Advacne</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier-adv/list') }}">
+                                        <span class="sidebar-mini">A.L</span>
+                                        <span class="sidebar-normal">List Advance</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#billing">
-                           <i class="nc-icon nc-money-coins"></i>
+                            <i class="nc-icon nc-money-coins"></i>
                             <p>
                                 Supplier Billing
                                 <b class="caret"></b>
@@ -329,36 +330,68 @@
                         </div>
                     </li>
 
-                      <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#suppay">
-                                <i class="nc-icon nc-money-coins"></i>
-                                <p>
-                                    Supplier Payment
-                                    <b class="caret"></b>
-                                </p>
-                            </a>
-                            <div class="collapse " id="suppay">
-                                <ul class="nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="{{ url('/supplier/payment') }}">
-                                            <span class="sidebar-mini">A.P</span>
-                                            <span class="sidebar-normal">Add Payment</span>
-                                        </a>
-                                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#suppay">
+                            <i class="nc-icon nc-money-coins"></i>
+                            <p>
+                                Supplier Payment
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse " id="suppay">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier/payment') }}">
+                                        <span class="sidebar-mini">A.P</span>
+                                        <span class="sidebar-normal">Add Payment</span>
+                                    </a>
+                                </li>
 
-                                        <li class="nav-item ">
-                                            <a class="nav-link" href="{{ url('/supplier/payment_list') }}">
-                                                <span class="sidebar-mini">P.L</span>
-                                                <span class="sidebar-normal">Payment List</span>
-                                            </a>
-                                        </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/supplier/payment_list') }}">
+                                        <span class="sidebar-mini">P.L</span>
+                                        <span class="sidebar-normal">Payment List</span>
+                                    </a>
+                                </li>
 
-                                </ul>
-                            </div>
-                        </li>
+                            </ul>
+                        </div>
+                    </li>
 
 
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#front">
+                            <i class="nc-icon nc-tv-2"></i>
+                            <p>
+                                FrontEnd
+                                <b class="caret"></b>
+                            </p>
+                        </a>
+                        <div class="collapse " id="front">
+                            <ul class="nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/slide') }}">
+                                        <span class="sidebar-mini"></span>
+                                        <span class="sidebar-normal">sliders</span>
+                                    </a>
+                                </li>
 
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/gallery') }}">
+                                        <span class="sidebar-mini"></span>
+                                        <span class="sidebar-normal">Gallery</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{{ url('/service') }}">
+                                        <span class="sidebar-mini"></span>
+                                        <span class="sidebar-normal">Services</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
 
                 </ul>
             </div>
@@ -369,43 +402,47 @@
                 <div class="container-fluid">
                     <div class="navbar-wrapper">
                         <div class="navbar-minimize">
-                            <button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon d-none d-lg-block">
+                            <button id="minimizeSidebar"
+                                class="btn btn-warning btn-fill btn-round btn-icon d-none d-lg-block">
                                 <i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
                                 <i class="fa fa-navicon visible-on-sidebar-mini"></i>
                             </button>
                         </div>
                         <a class="navbar-brand" href="#pablo">@yield('brand') </a>
                     </div>
-                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-end">
-                        <ul class="nav navbar-nav mr-auto">
+                        {{-- <ul class="nav navbar-nav mr-auto">
                             <form class="navbar-form navbar-left navbar-search-form" role="search">
                                 <div class="input-group">
                                     <i class="nc-icon nc-zoom-split"></i>
                                     <input type="text" value="" class="form-control" placeholder="Search...">
                                 </div>
                             </form>
-                        </ul>
+                        </ul> --}}
                         <ul class="navbar-nav">
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="http://example.com"
+                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">
                                     <i class="nc-icon nc-bullet-list-67"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{url('/admin')}}">
                                         <i class="nc-icon nc-chart-pie-35"></i> Dashboard
                                     </a>
-                                    <a href="{{ route('logout') }}" class="dropdown-item text-danger"
-                                    onclick="event.preventDefault();
+                                    <a href="{{ route('logout') }}" class="dropdown-item text-danger" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <i class="nc-icon nc-button-power"></i>  {{ __('Logout') }}
+                                        <i class="nc-icon nc-button-power"></i> {{ __('Logout') }}
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
                                         @csrf
                                     </form>
                                 </div>
@@ -417,109 +454,112 @@
             <!-- End Navbar -->
             <div class="content">
                 <div class="container-fluid">
-                   @include('message')
+                    @include('message')
                     @yield('content')
                 </div>
             </div>
-                                    <footer class="footer">
-                                        <div class="container">
-                                            <nav>
+            <footer class="footer">
+                <div class="container">
+                    <nav>
 
-                                                <p class="copyright text-center">
-                                                    ©
-                                                    <script>
-                                                        document.write(new Date().getFullYear())
-                                                    </script>
-                                                    <a href="http://suryaadvertising.com">Surya Advertising</a>
-                                                </p>
-                                            </nav>
-                                        </div>
-                                    </footer>
-                                </div>
-                            </div>
-
-
-<div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
-        </a>
-
-        <ul class="dropdown-menu">
-			<li class="header-title"> Sidebar Style</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Background Image</p>
-                    <label class="switch-image">
-                        <input type="checkbox" data-toggle="switch" checked="" data-on-color="info" data-off-color="info"><span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Sidebar Mini</p>
-                    <label class="switch-mini">
-                        <input type="checkbox" data-toggle="switch" data-on-color="info" data-off-color="info">
-                        <span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Fixed Navbar</p>
-                    <label class="switch-nav">
-                        <input type="checkbox" data-toggle="switch" data-on-color="info" data-off-color="info">
-                        <span class="toggle"></span>
-                    </label>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter badge-black" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange active" data-color="orange"></span>
-                        <span class="badge filter badge-red " data-color="red"></span>
-                        <span class="badge filter badge-purple" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ URL::to('back/img/sidebar-1.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ URL::to('back/img/sidebar-3.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ URL::to('back/img/sidebar-4.jpg') }}" alt="" />
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="{{ URL::to('back/img/sidebar-5.jpg') }}" alt="" />
-                </a>
-            </li>
-
-            <li class="button-container">
-				<button id="twitter" class="btn btn-social btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                <button id="facebook" class="btn btn-social btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"> · 426</i></button>
-            </li>
-        </ul>
+                        <p class="copyright text-center">
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://suryaadvertising.com">Surya Advertising</a>
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
     </div>
-</div>
+
+
+    <div class="fixed-plugin">
+        <div class="dropdown show-dropdown">
+            <a href="#" data-toggle="dropdown">
+                <i class="fa fa-cog fa-2x"> </i>
+            </a>
+
+            <ul class="dropdown-menu">
+                <li class="header-title"> Sidebar Style</li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger">
+                        <p>Background Image</p>
+                        <label class="switch-image">
+                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="info"
+                                data-off-color="info"><span class="toggle"></span>
+                        </label>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger">
+                        <p>Sidebar Mini</p>
+                        <label class="switch-mini">
+                            <input type="checkbox" data-toggle="switch" data-on-color="info" data-off-color="info">
+                            <span class="toggle"></span>
+                        </label>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger">
+                        <p>Fixed Navbar</p>
+                        <label class="switch-nav">
+                            <input type="checkbox" data-toggle="switch" data-on-color="info" data-off-color="info">
+                            <span class="toggle"></span>
+                        </label>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="adjustments-line">
+                    <a href="javascript:void(0)" class="switch-trigger background-color">
+                        <p>Filters</p>
+                        <div class="pull-right">
+                            <span class="badge filter badge-black" data-color="black"></span>
+                            <span class="badge filter badge-azure" data-color="azure"></span>
+                            <span class="badge filter badge-green" data-color="green"></span>
+                            <span class="badge filter badge-orange active" data-color="orange"></span>
+                            <span class="badge filter badge-red " data-color="red"></span>
+                            <span class="badge filter badge-purple" data-color="purple"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </a>
+                </li>
+                <li class="header-title">Sidebar Images</li>
+
+                <li class="active">
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="{{ URL::to('back/img/sidebar-1.jpg') }}" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="{{ URL::to('back/img/sidebar-3.jpg') }}" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="{{ URL::to('back/img/sidebar-4.jpg') }}" alt="" />
+                    </a>
+                </li>
+                <li>
+                    <a class="img-holder switch-trigger" href="javascript:void(0)">
+                        <img src="{{ URL::to('back/img/sidebar-5.jpg') }}" alt="" />
+                    </a>
+                </li>
+
+                <li class="button-container">
+                    <button id="twitter" class="btn btn-social btn-twitter btn-round sharrre"><i
+                            class="fa fa-twitter"></i> · 256</button>
+                    <button id="facebook" class="btn btn-social btn-facebook btn-round sharrre"><i
+                            class="fa fa-facebook-square"> · 426</i></button>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 <!--   Core JS Files   -->
@@ -580,4 +620,5 @@
 
 </script>
 @yield('scripts')
+
 </html>

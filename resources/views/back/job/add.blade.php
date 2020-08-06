@@ -3,6 +3,62 @@
 @section('brand',"Add Job Order")
 @section('style')
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<style>
+    /* The overlay effect with black background */
+    .overlay {
+        height: 100%;
+        width: 100%;
+        display: none;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0, 0, 0);
+        background-color: white;
+        /* Black with a little bit see-through */
+    }
+
+    /* The content */
+    .overlay-content {
+        position: relative;
+        top: 20px;
+        width: 80%;
+        text-align: center;
+        margin-top: 30px;
+        margin: auto;
+    }
+
+    /* Close button */
+    .overlay .closebtn {
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .overlay .closebtn:hover {
+        color: #ccc;
+    }
+
+    /* Style the search field */
+
+    /* Style the submit button */
+    /* .overlay button {
+        float: left;
+        width: 20%;
+        padding: 15px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    } */
+
+    .overlay button:hover {
+        background: #bbb;
+    }
+</style>
 @endsection
 @section('content')
 
@@ -15,7 +71,8 @@
             <div class="card-body ">
                 <form method="post" enctype="multipart/form-data" id="form" autocomplete="none">
                     <div class="p-3">
-                        <span class="btn btn-primary"><i class="nc-zoom-split"></i> Old Customer</span>
+                        <span onclick="openSearch();" class="btn btn-primary"><i class="fa fa-search"></i> Old
+                            Customer</span>
                     </div>
 
                     @csrf
@@ -99,7 +156,7 @@
 
                                 <div class="form-group">
                                     <label>Particular</label>
-                                    <input type="text" placeholder="Received Date" class="form-control"
+                                    <input type="text" placeholder="Particular" class="form-control"
                                         id="item_particular">
                                 </div>
 
@@ -273,7 +330,7 @@
                             <div class="form-group">
                                 <label>Grand Total</label>
                                 <input name="grand_total" type="number" placeholder="grand_total" class="form-control"
-                                    required id="grandtotal" value="0">
+                                    required id="grandtotal" value="0" readonly>
                             </div>
                         </div>
 
@@ -299,7 +356,7 @@
                             <div class="form-group">
                                 <label>Due</label>
                                 <input name="due" type="number" placeholder="Due" class="form-control" required id="due"
-                                    value="0" min="0">
+                                    value="0" min="0" readonly>
                             </div>
 
                         </div>
@@ -313,6 +370,43 @@
             </div>
         </div>
     </div>
+
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <table id="bootstrap-table" class="table">
+                <thead>
+                    <tr>
+                        <th data-field="name" class="text-center" data-sortable="true">Name</th>
+                        <th data-field="address" class="text-center" data-sortable="true">Address</th>
+                        <th data-field="Phone" data-sortable="true">Phone</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($customers as $customer)
+                    <tr>
+                        <td>
+                            {{$customer->name}}
+                        </td>
+                        <td>
+                            {{$customer->address}}
+                        </td>
+                        <td>
+                            {{$customer->phone}}
+                        </td>
+                        <td>
+                            <button class="btn btn-link" onclick="searchCustomer({{$customer->id}});">
+                                select
+                            </button>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+
     @endsection
     @section('scripts')
 
@@ -323,7 +417,7 @@
         var uniqueItemKeys=[];
         var customers=[];
         @foreach($customers as $customer)
-            customers['{{$customer->phone}}']={!! $customer->toJson() !!};
+            customers[{{$customer->id}}]={!! $customer->toJson() !!};
         @endforeach
         console.log(customers);
 
@@ -396,8 +490,10 @@
             if(customers!=null){
                 $("#c_id").val(customer.id);
                 $("#c_name").val(customer.name);
+                $("#c_phone").val(customer.phone);
                 $("#c_address").val(customer.address);
                 $("#c_email").val(customer.email);
+                closeSearch();
             }
 
 
@@ -436,7 +532,7 @@
            var nettotal=total-discount;
            var paid=parseInt($("#paid").val());
            var due=nettotal-paid;
-           $("#due").val(due);
+           $("#due").val(due<0?0:due);
         }
 
 
@@ -463,6 +559,80 @@
 
 
 
+    function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+    }
 
+
+    function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+    }
+
+    </script>
+    <script type="text/javascript">
+        var $table = $('#bootstrap-table');
+
+
+
+        $().ready(function() {
+            window.operateEvents = {
+                'click .view': function(e, value, row, index) {
+                    info = JSON.stringify(row);
+
+                    swal('You click view icon, row: ', info);
+                    console.log(info);
+                },
+                'click .edit': function(e, value, row, index) {
+                    info = JSON.stringify(row);
+
+                    swal('You click edit icon, row: ', info);
+                    console.log(info);
+                },
+                'click .remove': function(e, value, row, index) {
+                    console.log(row);
+                    $table.bootstrapTable('remove', {
+                        field: 'id',
+                        values: [row.id]
+                    });
+                }
+            };
+
+            $table.bootstrapTable({
+                toolbar: ".toolbar",
+                clickToSelect: true,
+                showRefresh: true,
+                search: true,
+                showToggle: true,
+                showColumns: true,
+                pagination: true,
+                searchAlign: 'left',
+                pageSize: 8,
+                clickToSelect: false,
+                pageList: [8, 10, 25, 50, 100],
+
+                formatShowingRows: function(pageFrom, pageTo, totalRows) {
+                    //do nothing here, we don't want to show the text "showing x of y from..."
+                },
+                formatRecordsPerPage: function(pageNumber) {
+                    return pageNumber + " rows visible";
+                },
+                icons: {
+                    refresh: 'fa fa-refresh',
+                    toggle: 'fa fa-th-list',
+                    columns: 'fa fa-columns',
+                    detailOpen: 'fa fa-plus-circle',
+                    detailClose: 'fa fa-minus-circle'
+                }
+            });
+
+            //activate the tooltips after the data table is initialized
+            $('[rel="tooltip"]').tooltip();
+
+            $(window).resize(function() {
+                $table.bootstrapTable('resetView');
+            });
+
+
+        });
     </script>
     @endsection

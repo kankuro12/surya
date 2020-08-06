@@ -81,7 +81,7 @@ class JoborderController extends Controller
         $joborder->order_received_date = $request->order_received_date;
         $joborder->order_delever_date = $request->order_delever_date;
         $joborder->grand_total = $request->grand_total;
-        $joborder->advance = $request->advance;
+        $joborder->advance = $request->advance > $request->grand_total ? $request->grand_total : $request->advance;
         $joborder->due = $request->due;
         $joborder->customer_id = $customer->id;
         $joborder->status = 0;
@@ -180,5 +180,12 @@ class JoborderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function worker(Request $request)
+    {
+
+
+        return view('worker.worker');
     }
 }

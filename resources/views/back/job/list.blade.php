@@ -2,41 +2,49 @@
 @section('title',"Job List")
 @section('brand',"Job List")
 @section('content')
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card bootstrap-table">
-                                <div class="card-body table-full-width">
-                                    <div class="toolbar">
-                                        <!--        Here you can write extra buttons/actions for the toolbar              -->
-                                    </div>
-                                    <table id="bootstrap-table" class="table">
-                                        <thead>
-                                            <th data-field="Customer" class="text-center">Customer</th>
-                                            <th data-field="orderno" data-sortable="true">Order No.</th>
-                                            <th data-field="order_received_date" data-sortable="true">Received Date</th>
-                                            <th data-field="order_delever_date" data-sortable="true">Delivery Date</th>
-                                            <th data-field="nettotal" data-sortable="true">Nettotal</th>
-                                            <th data-field="due" data-sortable="true"   >Due</th>
-                                            <th data-field="action" class="td-actions text-right" >Actions</th>
-                                        </thead>
-                                        <tbody>
-                                        @foreach($jobs as $job)
-                                            <tr>
-                                                <td><a href="{{ url('/customer/job_orders/'.$job->customer->id) }}">{{$job->customer->name}}</a></td>
-                                                <td>{{$job->id}}</td>
-                                                <td>{{$job->order_received_date}}</td>
-                                                <td>{{$job->order_delever_date}}</td>
-                                                <td>{{$job->netTotal()}}</td>
-                                                <td>{{$job->due}}</td>
-                                                <td><a title="Edit" class="btn btn-link btn-warning table-action edit" href="{{ url('/joborder/edit/'.$job->id) }}"><i class="fa fa-edit"></i></a>  <a title="Delete" class="btn btn-link btn-danger table-action remove" href="{{ url('/jonorder/delete/'.$job->id) }}"><i class="fa fa-remove"></i></a><a title="Detail" class="btn btn-link btn-warning table-action detail" href="{{ url('/joborder/detail/'.$job->id) }}"> <i class="fa fa-asterisk"></i></a></td>
-                                            </tr>
-                                        @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card bootstrap-table">
+            <div class="card-body table-full-width">
+                <div class="toolbar">
+                    <!--        Here you can write extra buttons/actions for the toolbar              -->
+                </div>
+                <table id="bootstrap-table" class="table">
+                    <thead>
+                        <th data-field="Customer" class="text-center">Customer</th>
+                        <th data-field="orderno" data-sortable="true">Order No.</th>
+                        <th data-field="order_received_date" data-sortable="true">Received Date</th>
+                        <th data-field="order_delever_date" data-sortable="true">Delivery Date</th>
+                        <th data-field="nettotal" data-sortable="true">Nettotal</th>
+                        <th data-field="due" data-sortable="true">Due</th>
+                        <th data-field="action" class="td-actions text-right">Actions</th>
+                    </thead>
+                    <tbody>
+                        @foreach($jobs as $job)
+                        <tr>
+                            <td><a
+                                    href="{{ url('/customer/job_orders/'.$job->customer->id) }}">{{$job->customer->name}}</a>
+                            </td>
+                            <td><a href="/customer/order_items/{{$job->id}}">{{$job->id}}</a></td>
+                            <td>{{$job->order_received_date}}</td>
+                            <td>{{$job->order_delever_date}}</td>
+                            <td>{{$job->netTotal()}}</td>
+                            <td>{{$job->due}}</td>
+                            <td><a title="Edit" class="btn btn-link btn-warning table-action edit"
+                                    href="{{ url('/joborder/edit/'.$job->id) }}"><i class="fa fa-edit"></i></a> <a
+                                    title="Delete" class="btn btn-link btn-danger table-action remove"
+                                    href="{{ url('/jonorder/delete/'.$job->id) }}"><i class="fa fa-remove"></i></a><a
+                                    title="Detail" class="btn btn-link btn-warning table-action detail"
+                                    href="{{ url('/joborder/detail/'.$job->id) }}"> <i class="fa fa-asterisk"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
