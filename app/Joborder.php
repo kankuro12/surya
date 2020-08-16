@@ -24,6 +24,10 @@ class Joborder extends Model
         return $this->belongsTo('\App\Customer');
     }
 
+    public function c()
+    {
+        return \App\Customer::find($this->customer_id);
+    }
 
     public function joborderitems()
     {
