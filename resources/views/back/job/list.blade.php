@@ -23,7 +23,8 @@
                         @foreach($jobs as $job)
                         <tr>
                             <td><a
-                                    href="{{ url('/customer/job_orders/'.$job->customer->id) }}">{{$job->customer->name}}</a>
+                                    {{-- href="{{ url('/customer/job_orders/'.$job->customer->id) }}">{{$job->customer->name}}</a>
+                                --}}
                             </td>
                             <td><a href="/customer/order_items/{{$job->id}}">{{$job->id}}</a></td>
                             <td>{{$job->order_received_date}}</td>
