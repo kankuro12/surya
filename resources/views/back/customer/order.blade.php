@@ -66,44 +66,44 @@
                     </div>
                 </form>
             </div>
-
+            <div class="col-md-12">
+                <div class="card bootstrap-table">
+                    <div class="card-body table-full-width">
+                        <div class="toolbar">
+                            <!--        Here you can write extra buttons/actions for the toolbar              -->
+                        </div>
+                        <table id="bootstrap-table" class="table">
+                            <thead>
+                                <th data-field="orderno" class="text-center" data-sortable="true">Order No.</th>
+                                <th data-field="order_received_date" data-sortable="true">Received Date</th>
+                                <th data-field="order_delever_date" data-sortable="true">Delivery Date</th>
+                                <th data-field="nettotal" data-sortable="true">Nettotal</th>
+                                <th data-field="due" data-sortable="true">Due</th>
+                                <th data-field="action" class="td-actions ">Actions</th>
+                            </thead>
+                            <tbody>
+                                @foreach($jobs as $job)
+                                <tr>
+                                    <td>{{$job->id}}</td>
+                                    <td>{{$job->order_received_date}}</td>
+                                    <td>{{$job->order_delever_date}}</td>
+                                    <td>{{$job->netTotal()}}</td>
+                                    <td>{{$job->due}}</td>
+                                    <td><a href="{{ url('customer/order_items/'.$job->id) }}"> Details</a></td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 {{-- end user details --}}
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="card bootstrap-table">
-            <div class="card-body table-full-width">
-                <div class="toolbar">
-                    <!--        Here you can write extra buttons/actions for the toolbar              -->
-                </div>
-                <table id="bootstrap-table" class="table">
-                    <thead>
-                        <th data-field="orderno" class="text-center" data-sortable="true">Order No.</th>
-                        <th data-field="order_received_date" data-sortable="true">Received Date</th>
-                        <th data-field="order_delever_date" data-sortable="true">Delivery Date</th>
-                        <th data-field="nettotal" data-sortable="true">Nettotal</th>
-                        <th data-field="due" data-sortable="true">Due</th>
-                        <th data-field="action" class="td-actions ">Actions</th>
-                    </thead>
-                    <tbody>
-                        @foreach($jobs as $job)
-                        <tr>
-                            <td>{{$job->id}}</td>
-                            <td>{{$job->order_received_date}}</td>
-                            <td>{{$job->order_delever_date}}</td>
-                            <td>{{$job->netTotal()}}</td>
-                            <td>{{$job->due}}</td>
-                            <td><a href="{{ url('customer/order_items/'.$job->id) }}"> Details</a></td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+
 </div>
 
 
