@@ -1,0 +1,77 @@
+warning: LF will be replaced by CRLF in resources/views/back/job/add.blade.php.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in resources/views/front/index.blade.php.
+The file will have its original line endings in your working directory.
+[1mdiff --git a/resources/views/back/job/add.blade.php b/resources/views/back/job/add.blade.php[m
+[1mindex ccb09c8..2c51ea0 100644[m
+[1m--- a/resources/views/back/job/add.blade.php[m
+[1m+++ b/resources/views/back/job/add.blade.php[m
+[36m@@ -257,7 +257,7 @@[m
+                             </div>[m
+                             <div class="col-md-3">[m
+                                 <div class="form-group">[m
+[31m-                                    <label>Size</label>[m
+[32m+[m[32m                                    <label>Size(sq.ft)</label>[m
+                                     <input onkeyup="calculateItemSize();" type="number" placeholder="Size"[m
+                                         class="form-control dis" id="item_size" value="0">[m
+                                 </div>[m
+[36m@@ -266,8 +266,9 @@[m
+                             <div class="col-md-3">[m
+                                 <div class="form-group">[m
+                                     <label>Rate</label>[m
+[32m+[m
+                                     <input onkeyup="calculateItemSize();" type="number" placeholder="Rate"[m
+[31m-                                        class="form-control" id="item_rate" value="0">[m
+[32m+[m[32m                                        class="form-control" id="item_rate" value="0" step=any>[m
+                                 </div>[m
+                             </div>[m
+ [m
+[36m@@ -635,4 +636,4 @@[m
+ [m
+         });[m
+     </script>[m
+[31m-    @endsection[m
+\ No newline at end of file[m
+[32m+[m[32m    @endsection[m
+[1mdiff --git a/resources/views/front/index.blade.php b/resources/views/front/index.blade.php[m
+[1mindex e8f49c9..ef0fd46 100644[m
+[1m--- a/resources/views/front/index.blade.php[m
+[1m+++ b/resources/views/front/index.blade.php[m
+[36m@@ -6,7 +6,8 @@[m
+     <div class="bend niceties preview-2">[m
+         <div id="ensign-nivoslider" class="slides">[m
+             @foreach (\App\Slider::all() as $slider)[m
+[31m-            <img src="{{asset($slider->image)}}" alt="" />[m
+[32m+[m[32m            {{-- <img src="{{asset($slider->image)}}" alt="" /> --}}[m
+[32m+[m[32m            <img src="http://www.suryaadvertising.com.np/process/public/{{$slider->image}}" alt="" />[m
+             @endforeach[m
+         </div>[m
+     </div>[m
+[36m@@ -107,7 +108,9 @@[m
+                         <div class="services-details">[m
+                             <div class="single-services">[m
+                                 <a class="services-icon text-center" href="#">[m
+[31m-                                    <img src="{{asset($item->image)}}" style="width:70%" />[m
+[32m+[m[32m                                    {{-- <img src="{{asset($item->image)}}" style="width:70%" /> --}}[m
+[32m+[m[32m                                    <img src="http://www.suryaadvertising.com.np/process/public/{{$item->image}}"[m
+[32m+[m[32m                                        style="width:70%" />[m
+                                 </a>[m
+                                 <h4>{{$item->title}}</h4>[m
+                                 <p>[m
+[36m@@ -183,10 +186,14 @@[m
+                 <div class="col-md-4 col-sm-4 col-xs-12 {{$item->category}}">[m
+                     <div class="single-awesome-project">[m
+                         <div class="awesome-img">[m
+[31m-                            <a href="#"><img src="{{asset($item->image)}}" alt="" /></a>[m
+[32m+[m[32m                            {{-- <a href="#"><img src="{{asset($item->image)}}" alt="" /></a> --}}[m
+[32m+[m[32m                            <img src="http://www.suryaadvertising.com.np/process/public/{{$item->image}}"[m
+[32m+[m[32m                                style="width:70%" />[m
+                             <div class="add-actions text-center">[m
+                                 <div class="project-dec">[m
+[31m-                                    <a class="venobox" data-gall="myGallery" href="{{asset($item->image)}}">[m
+[32m+[m[32m                                    {{-- <a class="venobox" data-gall="myGallery" href="{{asset($item->image)}}"> --}}[m
+[32m+[m[32m                                    <a class="venobox" data-gall="myGallery"[m
+[32m+[m[32m                                        href="http://www.suryaadvertising.com.np/process/public/{{$item->image}}">[m
+                                         <h4>Business City</h4>[m
+                                         <span>Web Development</span>[m
+                                     </a>[m

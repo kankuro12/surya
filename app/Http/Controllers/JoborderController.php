@@ -187,4 +187,19 @@ class JoborderController extends Controller
 
         return view('worker.worker');
     }
+
+    public function joborders(Request $request)
+    {
+        $data = $request->data ?? [];
+        if (!$request->session()->has('type')) {
+            if (empty($data)) {
+                $data = [1, 2, 3, 4];
+            }
+            $request->session()->put('type', $data);
+        } else {
+            $data = $request->session()->get('type');
+        }
+        $joborders = Joborderitem::where('status', '0')->get();
+        return view('jobpanel.index', ['joborders' => $joborders]);
+    }
 }
