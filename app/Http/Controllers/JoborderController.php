@@ -63,7 +63,6 @@ class JoborderController extends Controller
 
         $customer = new Customer();
         if ($request->c_id == null) {
-
             $customer->name = $request->c_name;
             $customer->address = $request->c_address;
             $customer->phone = $request->c_phone;
