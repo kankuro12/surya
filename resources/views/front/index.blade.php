@@ -6,7 +6,8 @@
     <div class="bend niceties preview-2">
         <div id="ensign-nivoslider" class="slides">
             @foreach (\App\Slider::all() as $slider)
-            <img src="{{asset($slider->image)}}" alt="" />
+            {{-- <img src="{{asset($slider->image)}}" alt="" /> --}}
+            <img src="http://www.suryaadvertising.com.np/process/public/{{$slider->image}}" alt="" />
             @endforeach
         </div>
     </div>
@@ -107,7 +108,9 @@
                         <div class="services-details">
                             <div class="single-services">
                                 <a class="services-icon text-center" href="#">
-                                    <img src="{{asset($item->image)}}" style="width:70%" />
+                                    {{-- <img src="{{asset($item->image)}}" style="width:70%" /> --}}
+                                    <img src="http://www.suryaadvertising.com.np/process/public/{{$item->image}}"
+                                        style="width:70%" />
                                 </a>
                                 <h4>{{$item->title}}</h4>
                                 <p>
@@ -183,10 +186,14 @@
                 <div class="col-md-4 col-sm-4 col-xs-12 {{$item->category}}">
                     <div class="single-awesome-project">
                         <div class="awesome-img">
-                            <a href="#"><img src="{{asset($item->image)}}" alt="" /></a>
+                            {{-- <a href="#"><img src="{{asset($item->image)}}" alt="" /></a> --}}
+                            <img src="http://www.suryaadvertising.com.np/process/public/{{$item->image}}"
+                                style="width:70%" />
                             <div class="add-actions text-center">
                                 <div class="project-dec">
-                                    <a class="venobox" data-gall="myGallery" href="{{asset($item->image)}}">
+                                    {{-- <a class="venobox" data-gall="myGallery" href="{{asset($item->image)}}"> --}}
+                                    <a class="venobox" data-gall="myGallery"
+                                        href="http://www.suryaadvertising.com.np/process/public/{{$item->image}}">
                                         <h4>Business City</h4>
                                         <span>Web Development</span>
                                     </a>

@@ -257,7 +257,7 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>Size</label>
+                                    <label>Size(sq.ft)</label>
                                     <input onkeyup="calculateItemSize();" type="number" placeholder="Size"
                                         class="form-control dis" id="item_size" value="0">
                                 </div>
@@ -266,8 +266,9 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Rate</label>
+
                                     <input onkeyup="calculateItemSize();" type="number" placeholder="Rate"
-                                        class="form-control" id="item_rate" value="0">
+                                        class="form-control" id="item_rate" value="0" step=any>
                                 </div>
                             </div>
 
