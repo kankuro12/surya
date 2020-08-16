@@ -8,6 +8,7 @@ use App\Customer;
 use App\Joborderitem;
 use Illuminate\Support\Facades\Hash;
 use App\Events\JoborderAdded;
+use Symfony\Component\Process\Process;
 
 class JoborderController extends Controller
 {
@@ -199,7 +200,29 @@ class JoborderController extends Controller
         } else {
             $data = $request->session()->get('type');
         }
-        $joborders = Joborderitem::where('status', '0')->get();
+        $joborders = Joborder::where('status', '<', '2')->get();
         return view('jobpanel.index', ['joborders' => $joborders]);
+    }
+
+    public function process(Joborderitem $item)
+    {
+        if ($item->status > 0) {
+            return 0;
+        } else {
+            $item->status = 1;
+            $item->save();
+            return 1;
+        }
+    }
+
+    public function finish(Joborderitem $item)
+    {
+        if ($item->status > 1) {
+            return 0;
+        } else {
+            $item->status = 2;
+            $item->save();
+            return 1;
+        }
     }
 }

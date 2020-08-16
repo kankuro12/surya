@@ -250,8 +250,8 @@
 
                                 <div class="form-group">
                                     <label>Qty</label>
-                                    <input onkeyup="calculateSize(); calculateItemSize();" type="number"
-                                        placeholder="Qty" class="form-control" id="item_qty" value="1">
+                                    <input onkeyup="culateItemSize();" type="number" placeholder="Qty"
+                                        class="form-control" id="item_qty" value="1">
                                 </div>
 
                             </div>

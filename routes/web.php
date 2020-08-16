@@ -72,6 +72,8 @@ Route::post('/joborder/add', 'JoborderController@store');
 Route::get('/joborder/list', 'JoborderController@index');
 Route::get('/joborder/worker', 'JoborderController@worker');
 Route::get('/jobitem', 'JoborderController@joborders');
+Route::get('/process/{item}', 'JoborderController@process');
+Route::get('/finish/{item}', 'JoborderController@finish');
 
 // expense
 Route::get('/exp/add', 'ExpenseController@index');
