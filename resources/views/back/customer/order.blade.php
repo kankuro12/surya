@@ -54,9 +54,8 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-
-                                        <input type="text" class="form-control" placeholder="No Data" disabled=""
-                                            value="">
+                                        <a href="/customer/edit/{{$customer->id}}"
+                                            class="btn btn-primary float-right">Edit Info</a>
                                     </div>
                                 </div>
                             </div>
