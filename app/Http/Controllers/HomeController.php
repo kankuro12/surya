@@ -44,8 +44,11 @@ class HomeController extends Controller
 
         // total joborder
         $order = Joborder::all();
+
         $due = Customer::sum('due');
+
         $advance = Joborder::sum('advance') + Payment::sum('amount');
+
         $totalorder = $due + $advance;
 
         // total supplier bills
@@ -61,6 +64,7 @@ class HomeController extends Controller
         // total supplier
         $supplier = Supplier::count();
 
+        dd($due, $totalorder, $advance);
 
 
         return view('back.index')->with(compact('salary', 'exp', 'totalorder', 'totalbill', 'staff', 'customer', 'supplier', 'totaladv', 'due', 'advance'));
