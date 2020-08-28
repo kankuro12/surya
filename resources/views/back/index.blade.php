@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-7">
                         <div class="numbers">
-                            <p class="card-category">Advance</p>
+                            <p class="card-category">Payments</p>
                             <h5 class="card-title"><span class="text-success"
                                     style="font-size:11px; font-weight:bold;">Rs.</span> {{$advance}}</h5>
                         </div>

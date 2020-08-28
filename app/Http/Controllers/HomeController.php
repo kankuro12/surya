@@ -13,6 +13,7 @@ use App\Staff;
 use App\Customer;
 use App\Supplier;
 use App\Advance;
+use App\Payment;
 
 class HomeController extends Controller
 {
@@ -43,8 +44,8 @@ class HomeController extends Controller
 
         // total joborder
         $order = Joborder::all();
-        $due = Joborder::sum('due');
-        $advance = Joborder::sum('advance');
+        $due = Customer::sum('due');
+        $advance = Joborder::sum('advance') + Payment::sum('amount');
         $totalorder = $due + $advance;
 
         // total supplier bills
