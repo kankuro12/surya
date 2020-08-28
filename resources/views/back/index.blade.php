@@ -68,7 +68,7 @@
                         <div class="numbers">
                             <p class="card-category">Customer Order</p>
                             <h5 class="card-title"><span class="text-danger"
-                                    style="font-size:11px; font-weight:bold;">Rs.</span> {{$totalorder}}</h5>
+                                    style="font-size:11px; font-weight:bold;">Rs.</span> {{$due+$advance}}</h5>
                         </div>
                     </div>
                 </div>
