@@ -49,7 +49,7 @@
                                 @endif
                             </td>
                             <td>
-                                {{$order->remarks}}
+                                {{$order->remark}}
                             </td>
                         </tr>
                         @endforeach
