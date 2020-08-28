@@ -64,9 +64,6 @@ class HomeController extends Controller
         // total supplier
         $supplier = Supplier::count();
 
-        dd($due, $totalorder, $advance);
-
-
         return view('back.index')->with(compact('salary', 'exp', 'totalorder', 'totalbill', 'staff', 'customer', 'supplier', 'totaladv', 'due', 'advance'));
     }
 }
