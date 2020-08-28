@@ -49,7 +49,7 @@ class HomeController extends Controller
 
         $advance = Joborder::sum('advance') + Payment::sum('amount');
 
-        $totalorder = $due + $advance;
+        $totalorder = $advance + $due;
 
         // total supplier bills
         $bill = Supplierbill::where('iscancel', '!=', 1)->get();
