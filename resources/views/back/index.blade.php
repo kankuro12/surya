@@ -55,32 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-sm-6">
-        <div class="card card-stats">
-            <div class="card-body ">
-                <div class="row">
-                    <div class="col-5">
-                        <div class="icon-big text-center icon-warning">
-                            <i class="nc-icon nc-money-coins text-danger"></i>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="numbers">
-                            <p class="card-category">Customer Order</p>
-                            <h5 class="card-title"><span class="text-danger"
-                                    style="font-size:11px; font-weight:bold;">Rs.</span> {{$totalorder}}</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                    <a href="{{url('/admin')}}" class="text-danger"> <i class="fa fa-refresh"></i>Refresh Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="col-lg-3 col-sm-6">
         <div class="card card-stats">
             <div class="card-body ">
