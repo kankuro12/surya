@@ -156,8 +156,24 @@
 
                                 <div class="form-group">
                                     <label>Particular</label>
-                                    <input type="text" placeholder="Particular" class="form-control"
+                                    <select type="text" placeholder="Particular" class="form-control"
                                         id="item_particular">
+                                        <option>---select a particular---</option>
+                                        <option value="flex print">flex print</option>
+                                        <option value="flex with ileds">flex with ileds</option>
+                                        <option value="D.P.S">DPS</option>
+                                        <option value="Light board">lght board</option>
+                                        <option value="stand board">stand board</option>
+                                        <option value="2d board"> 2d board</option>
+                                        <option value="3d board"> 3d board</option>
+                                        <option value="standyee"> standyee</option>
+                                        <option value="2d cards"> 2d cards</option>
+                                        <option value="V-cards"> v-cards</option>
+                                        <option value="Sticker"> sticker</option>
+                                        <option value="Forex sticker"> Forex sticker</option>
+                                        <option value="flex dantting">flex denting</option>
+                                        <option value="photo dantting">photo denting</option>
+                                    </select>
                                 </div>
 
                             </div>
