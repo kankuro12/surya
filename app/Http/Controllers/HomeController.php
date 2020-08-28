@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Collection;
 
 use Illuminate\Http\Request;
@@ -34,19 +35,20 @@ class HomeController extends Controller
     {
 
         // total salary
-        $salary = Salary::all()->sum('amount');
-        $totaladv = Advance::all()->sum('amount');
+        $salary = Salary::sum('amount');
+        $totaladv = Advance::sum('amount');
 
         // total expenses
-        $exp = Expense::all()->sum('amount');
+        $exp = Expense::sum('amount');
 
         // total joborder
         $order = Joborder::all();
-        $due = $order->sum('due');
-        $totalorder = $due + $order->sum('advance');
+        $due = Joborder::sum('due');
+        $advance = Joborder::sum('advance');
+        $totalorder = $due + $advance;
 
         // total supplier bills
-        $bill = Supplierbill::where('iscancel','!=', 1)->get();
+        $bill = Supplierbill::where('iscancel', '!=', 1)->get();
         $vat = $bill->sum('vat');
         $discount = $bill->sum('discount');
         $totalbill = ($bill->sum('total_amount') + $vat) - $discount;
@@ -60,7 +62,6 @@ class HomeController extends Controller
 
 
 
-        return view('back.index')->with(compact('salary','exp','totalorder','totalbill','staff','customer','supplier','totaladv'));
+        return view('back.index')->with(compact('salary', 'exp', 'totalorder', 'totalbill', 'staff', 'customer', 'supplier', 'totaladv', 'due', 'advance'));
     }
-
 }
